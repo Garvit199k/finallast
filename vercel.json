@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "typing-test/api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "typing-test/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "typing-test/**/*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "typing-test/**/*.css",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/typing-test/api/$1.js"
+    }
+  ]
+}
